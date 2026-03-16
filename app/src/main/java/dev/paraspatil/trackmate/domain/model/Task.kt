@@ -9,7 +9,7 @@ data class Task(
     val description: String,
     val assignedTo: String,
     val createdBy: String,
-    val priority: String,
+    val priority: TaskPriority,
     val status: TaskStatus,
     val dueDate: Long,
     val createdAt: Long,
@@ -21,7 +21,7 @@ data class Task(
             description: String,
             assignedTo: String,
             createdBy: String,
-            priority: String,
+            priority: TaskPriority,
             dueDate: Long,
             location: LocationData? = null
         ) = Task(
@@ -57,10 +57,8 @@ enum class TaskPriority{
 }
 
 @Serializable
-enum class LocationData (
+data class LocationData(
     val latitude: Double,
     val longitude: Double,
-    val address: String=""
+    val address: String = ""
 )
-
-
