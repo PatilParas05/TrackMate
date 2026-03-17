@@ -5,7 +5,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
-import dev.paraspatil.trackmate.domain.repository.Result
+import dev.paraspatil.trackmate.domain.model.Result
 import dev.paraspatil.trackmate.domain.model.TrackingLocation
 import dev.paraspatil.trackmate.domain.repository.LocationRepository
 import jakarta.inject.Inject
@@ -74,7 +74,7 @@ class LocationRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun observeTeamLocation(teamId: String): Flow<Result<List<TrackingLocation>>> = callbackFlow {
+    override fun observeTeamLocations(teamId: String): Flow<Result<List<TrackingLocation>>> = callbackFlow {
         try {
             trySend(Result.Success(emptyList()))
             awaitClose { }
@@ -83,15 +83,15 @@ class LocationRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun startLocationUpdates(): dev.paraspatil.trackmate.domain.repository.Result<Unit> {
+    override suspend fun startLocationUpdates(): Result<Unit> {
         return try {
-            dev.paraspatil.trackmate.domain.repository.Result.Success(Unit)
+            Result.Success(Unit)
         } catch (e: Exception) {
-            dev.paraspatil.trackmate.domain.repository.Result.Error(e)
+            Result.Error(e)
         }
     }
 
-    override suspend fun stopLocationUpdates(): dev.paraspatil.trackmate.domain.repository.Result<Unit> {
+    override suspend fun stopLocationUpdates(): Result<Unit> {
         return try {
             currentLocationCallBack?.let {
                 fusedLocationClient.removeLocationUpdates(it)
