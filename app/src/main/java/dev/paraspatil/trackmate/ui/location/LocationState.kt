@@ -4,6 +4,7 @@ import dev.paraspatil.trackmate.domain.model.TrackingLocation
 
 data class LocationState (
     val isTracking: Boolean = false,
+    val isLoading: Boolean = false,
     val currentLocation: TrackingLocation? = null,
     val teamLocations: List<TrackingLocation> = emptyList(),
     val error: String? = null,
