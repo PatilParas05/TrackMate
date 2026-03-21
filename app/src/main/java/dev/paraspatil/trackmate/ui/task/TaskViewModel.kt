@@ -2,6 +2,7 @@ package dev.paraspatil.trackmate.ui.task
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.paraspatil.trackmate.domain.model.Task
 import dev.paraspatil.trackmate.domain.repository.TaskRepository
 import dev.paraspatil.trackmate.domain.model.Result
@@ -12,6 +13,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class TaskViewModel @Inject constructor(
     private val taskRepository: TaskRepository
 ) : ViewModel(){

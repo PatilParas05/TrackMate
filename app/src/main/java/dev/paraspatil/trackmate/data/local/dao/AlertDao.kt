@@ -17,7 +17,7 @@ interface AlertDao {
     fun observeUnreadAlerts(): Flow<List<AlertEntity>>
 
     @Query("SELECT * FROM alerts WHERE id = :alertId")
-    fun getAlertById(alertId: String): AlertEntity?
+    suspend fun getAlertById(alertId: String): AlertEntity?
 
     @Insert
     suspend fun insertAlert(alert: AlertEntity)
