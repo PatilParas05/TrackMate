@@ -1,7 +1,6 @@
 package dev.paraspatil.trackmate.ui.alert
 
 import dev.paraspatil.trackmate.domain.model.Alert
-import dev.paraspatil.trackmate.domain.model.Task
 
 data class AlertState (
     val alerts: List<Alert> = emptyList(),
