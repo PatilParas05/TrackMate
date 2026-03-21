@@ -11,7 +11,7 @@ import dev.paraspatil.trackmate.domain.model.TaskStatus
 
 @Entity(tableName = "tasks")
 data class TaskEntity(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id: String,
     val title: String,
     val description: String,
