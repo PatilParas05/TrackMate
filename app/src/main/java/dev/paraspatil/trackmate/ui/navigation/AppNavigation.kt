@@ -3,6 +3,7 @@ package dev.paraspatil.trackmate.ui.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -18,13 +19,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dev.paraspatil.trackmate.ui.screens.DashboardScreen
+import dev.paraspatil.trackmate.ui.screens.LocationTrackingScreen
 
 sealed class Screen(val route: String,val label: String,val icon: ImageVector) {
     object Dashboard : Screen("dashboard", "Home", Icons.Default.Home)
+    object Location : Screen("location", "Location", Icons.Default.LocationOn)
+
 
 }
 val bottomNavItems = listOf(
     Screen.Dashboard,
+    Screen.Location,
 )
 
 @Composable
@@ -62,6 +67,8 @@ fun AppNavigation(){
             modifier = Modifier.padding(innerPadding)
         ){
             composable(Screen.Dashboard.route){ DashboardScreen(navController) }
+            composable(Screen.Location.route) { LocationTrackingScreen() }
+
         }
     }
 }
