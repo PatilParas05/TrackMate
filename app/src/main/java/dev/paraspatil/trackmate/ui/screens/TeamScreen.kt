@@ -22,7 +22,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,7 +36,7 @@ val sampleTeamMember = listOf(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TeamMember(){
+fun TeamScreen(){
     Column(modifier = Modifier.fillMaxSize()) {
         TopAppBar(title = { Text("Team") })
 
