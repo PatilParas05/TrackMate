@@ -2,6 +2,7 @@ package dev.paraspatil.trackmate.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -38,6 +39,7 @@ import dev.paraspatil.trackmate.ui.task.TaskViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(
+    contentPadding: PaddingValues = PaddingValues(0.dp),
     navController: NavController,
     taskViewModel: TaskViewModel = hiltViewModel(),
     alertViewModel: AlertViewModel = hiltViewModel()

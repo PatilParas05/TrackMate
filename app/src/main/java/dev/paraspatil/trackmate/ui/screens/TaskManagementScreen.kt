@@ -39,6 +39,7 @@ import dev.paraspatil.trackmate.ui.task.TaskViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskManagementScreen (
+    contentPadding: PaddingValues = PaddingValues(0.dp),
     viewModel: TaskViewModel = hiltViewModel()
 ){
     val state = viewModel.state.collectAsState()

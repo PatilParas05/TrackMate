@@ -41,6 +41,7 @@ import dev.paraspatil.trackmate.ui.composables.LoadingScreen
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AlertListScreen(
+    contentPadding: PaddingValues = PaddingValues(0.dp),
     viewModel: AlertViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.collectAsState()

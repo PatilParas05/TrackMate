@@ -36,7 +36,7 @@ val sampleTeamMember = listOf(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TeamScreen(){
+fun TeamScreen(contentPadding: PaddingValues = PaddingValues(0.dp),){
     Column(modifier = Modifier.fillMaxSize()) {
         TopAppBar(title = { Text("Team") })
 
