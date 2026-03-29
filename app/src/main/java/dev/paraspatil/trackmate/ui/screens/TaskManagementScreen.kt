@@ -24,6 +24,7 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -180,7 +181,7 @@ fun CreateTaskDialog(onDismiss: () -> Unit, onCreate: (Task) -> Unit) {
                         readOnly = true, label = { Text("Priority") },
                         trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(priorityExpanded) },
                         modifier = Modifier
-                            .menuAnchor()
+                            .menuAnchor(MenuAnchorType.PrimaryNotEditable, true)
                             .fillMaxWidth()
                     )
                     ExposedDropdownMenu(expanded = priorityExpanded,

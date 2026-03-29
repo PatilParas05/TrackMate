@@ -114,7 +114,7 @@ fun AppNavigation() {
                 TaskManagementScreen(contentPadding = innerPadding)
             }
             composable(Screen.Alerts.route) {
-                AlertListScreen(contentPadding = innerPadding, viewModel = alertViewModel)
+                AlertListScreen(contentPadding = innerPadding, alertViewModel = alertViewModel)
             }
             composable(Screen.Team.route) {
                 TeamScreen(contentPadding = innerPadding)

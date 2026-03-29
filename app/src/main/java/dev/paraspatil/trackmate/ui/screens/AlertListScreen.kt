@@ -21,6 +21,7 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -149,7 +150,7 @@ fun SendAlertDialog(onDismiss: () -> Unit, onSend: (Alert) -> Unit) {
                         value = type.name, onValueChange = {}, readOnly = true,
                         label = { Text("Type") },
                         trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(typeExpanded) },
-                        modifier = Modifier.menuAnchor()
+                        modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryEditable, true)
                     )
                     ExposedDropdownMenu(expanded = typeExpanded,
                         onDismissRequest = { typeExpanded = false }) {
@@ -165,7 +166,7 @@ fun SendAlertDialog(onDismiss: () -> Unit, onSend: (Alert) -> Unit) {
                         value = priority.name, onValueChange = {}, readOnly = true,
                         label = { Text("Priority") },
                         trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(priorityExpanded) },
-                        modifier = Modifier.menuAnchor()
+                        modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryEditable, true)
                     )
                     ExposedDropdownMenu(expanded = priorityExpanded,
                         onDismissRequest = { priorityExpanded = false }) {
