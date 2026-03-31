@@ -93,4 +93,8 @@ dependencies {
 
     // Extended Icons
     implementation("androidx.compose.material:material-icons-extended")
+
+    //Google Map
+    implementation("com.google.maps.android:maps-compose:4.3.3")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 }
